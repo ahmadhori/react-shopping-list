@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-
 class Counter extends Component {
   state = {
-    count: 0
+    count: 1
   };
 
   styles = {
@@ -12,7 +11,7 @@ class Counter extends Component {
   render() {
     return (
       <div>
-        <span style={this.styles} className="badge badge-secondary m-2">
+        <span style={this.styles} className={this.counterClasses()}>
           {this.formatCount()}
         </span>
         <button
@@ -27,6 +26,10 @@ class Counter extends Component {
 
   formatCount() {
     return this.state.count == 0 ? "Zero" : this.state.count;
+  }
+
+  counterClasses() {
+    return this.state.count == 0 ? "btn btn-danger m-2" : "btn btn-warning m-2";
   }
 }
 
