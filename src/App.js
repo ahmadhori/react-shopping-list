@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from "react";
+import React, { Component } from "react";
 import "./App.css";
 import Counters from "./components/counters";
 import Navbar from "./components/navbar";

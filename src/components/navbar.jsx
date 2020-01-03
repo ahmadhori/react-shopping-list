@@ -8,7 +8,7 @@ class Navbar extends Component {
       <nav className="navbar navbar-light bg-light">
         <a href="" className="navbar-brand">
           <span className="badge badge-pill badge-secondary">
-            {this.props.sum}
+            Total : {this.props.sum}
           </span>
         </a>
       </nav>

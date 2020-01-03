@@ -13,25 +13,31 @@ class Counter extends Component {
   render() {
     console.log(this.props);
     return (
-      <div>
-        {this.props.children}
-        <span style={this.styles} className={this.counterClasses()}>
-          {this.formatCount()}
-        </span>
-        <button
-          style={{ fontSize: 14, fontWeight: "bold" }}
-          className="btn btn-primary m-2"
-          onClick={this.props.incrementBtnClick}
-        >
-          Increment
-        </button>
-        <button
-          className="btn btn-danger btn-sm m-2"
-          onClick={this.props.deleteBtnClick}
-        >
-          Delete
-        </button>
-      </div>
+      <React.Fragment>
+        <div className="col-sm">{this.props.children}</div>
+        <div className="col-sm">
+          <span style={this.styles} className={this.counterClasses()}>
+            {this.formatCount()}
+          </span>
+        </div>
+        <div className="col-sm">
+          <button
+            style={{ fontSize: 14, fontWeight: "bold" }}
+            className="btn btn-primary m-2"
+            onClick={this.props.incrementBtnClick}
+          >
+            +
+          </button>
+        </div>
+        <div className="col-sm">
+          <button
+            className="btn btn-danger btn-sm m-2"
+            onClick={this.props.deleteBtnClick}
+          >
+            X
+          </button>
+        </div>
+      </React.Fragment>
     );
   }
 
