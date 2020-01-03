@@ -1,16 +1,20 @@
 import React, { Component } from "react";
 class Counter extends Component {
   state = {
-    count: 1
+    id: this.props.id,
+    count: this.props.count
   };
 
   styles = {
-    fontSize: 10
+    fontSize: 12,
+    fontWeight: "bold"
   };
 
   render() {
+    console.log(this.props);
     return (
       <div>
+        {this.props.children}
         <span style={this.styles} className={this.counterClasses()}>
           {this.formatCount()}
         </span>
