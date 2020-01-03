@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 class Counter extends Component {
-  state = {
-    id: this.props.id,
-    count: this.props.count
-  };
+  //state = {
+  //  id: this.props.id,
+  //  count: this.props.count
+  //};
 
   styles = {
     fontSize: 12,
@@ -21,13 +21,13 @@ class Counter extends Component {
         <button
           style={{ fontSize: 14, fontWeight: "bold" }}
           className="btn btn-primary m-2"
-          onClick={this.incrementBtnClick}
+          onClick={this.props.incrementBtnClick}
         >
           Increment
         </button>
         <button
           className="btn btn-danger btn-sm m-2"
-          onClick={this.props.onClick}
+          onClick={this.props.deleteBtnClick}
         >
           Delete
         </button>
@@ -35,17 +35,12 @@ class Counter extends Component {
     );
   }
 
-  incrementBtnClick = () => {
-    console.log("Hello from increment btn", this);
-    this.setState({ count: this.state.count + 1 });
-  };
-
   formatCount() {
-    return this.state.count === 0 ? "Zero" : this.state.count;
+    return this.props.count === 0 ? "Zero" : this.props.count;
   }
 
   counterClasses() {
-    return this.state.count === 0
+    return this.props.count === 0
       ? "btn btn-danger m-2"
       : "btn btn-warning m-2";
   }
