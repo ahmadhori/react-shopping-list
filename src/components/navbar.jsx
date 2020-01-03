@@ -6,7 +6,11 @@ class Navbar extends Component {
 
     return (
       <nav className="navbar navbar-light bg-light">
-        <span className="btn btn-danger m-2">{this.props.sum}</span>
+        <a href="" className="navbar-brand">
+          <span className="badge badge-pill badge-secondary">
+            {this.props.sum}
+          </span>
+        </a>
       </nav>
     );
   };
