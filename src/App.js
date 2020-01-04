@@ -34,6 +34,23 @@ class App extends Component {
     this.setState({ counters: xx });
   };
 
+  handleDecrement = id => {
+    console.log("Decrement handeled ", id, " done");
+
+    const xx = this.state.counters.map(x => {
+      if (x.id === id) {
+        var l = x;
+        if (l.value !== 0) {
+          l.value = l.value - 1;
+        }
+        return l;
+      } else {
+        return x;
+      }
+    });
+    this.setState({ counters: xx });
+  };
+
   handleReset = () => {
     const xx = this.state.counters.map(c => {
       c.value = 0;
@@ -58,6 +75,7 @@ class App extends Component {
             counters={this.state.counters}
             onDelete={this.handleDelete}
             onIncrement={this.handleIncrement}
+            onDecrement={this.handleDecrement}
             onReset={this.handleReset}
           />
         </main>

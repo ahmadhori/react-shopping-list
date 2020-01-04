@@ -6,13 +6,13 @@ class Counters extends Component {
     return (
       <div>
         {this.props.counters.map(counter => (
-          <div className="row">
+          <div className="row" key={counter.id}>
             <Counter
-              key={counter.id}
               id={counter.id}
               count={counter.value}
               deleteBtnClick={() => this.props.onDelete(counter.id)}
               incrementBtnClick={() => this.props.onIncrement(counter.id)}
+              decrementBtnClick={() => this.props.onDecrement(counter.id)}
             >
               <h2># {counter.id}</h2>
             </Counter>

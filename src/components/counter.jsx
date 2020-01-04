@@ -31,6 +31,15 @@ class Counter extends Component {
         </div>
         <div className="col-sm">
           <button
+            style={{ fontSize: 14, fontWeight: "bold" }}
+            className={this.decrementBtnClasses()}
+            onClick={this.props.decrementBtnClick}
+          >
+            -
+          </button>
+        </div>
+        <div className="col-sm">
+          <button
             className="btn btn-danger btn-sm m-2"
             onClick={this.props.deleteBtnClick}
           >
@@ -49,6 +58,12 @@ class Counter extends Component {
     return this.props.count === 0
       ? "btn btn-danger m-2"
       : "btn btn-warning m-2";
+  }
+
+  decrementBtnClasses() {
+    return this.props.count === 0
+      ? "btn btn-light m-2"
+      : "btn btn-secondary m-2";
   }
 }
 
